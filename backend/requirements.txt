@@ -1,0 +1,3 @@
+fastapi
+uvicorn
+httpx  # für API-Anfragen
