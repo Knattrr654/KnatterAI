@@ -1,16 +1,38 @@
 /* styles.css */
 body {
   font-family: Arial, sans-serif;
-  background-color: #1e1e1e;
+  background-color: #1e1e1e;  /* Dunkelmodus Hintergrund */
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  transition: all 0.3s ease;  /* Für den sanften Übergang */
 }
 
 #app {
   text-align: center;
   font-size: 2rem;
+}
+
+/* Helles Design */
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
 }
