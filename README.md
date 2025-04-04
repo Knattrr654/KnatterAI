@@ -1,5 +1,4 @@
 # KnatterAI
-# KnatterAI
 
 Willkommen bei KnatterAI – ein smarter KI-Assistent für Schule, Uni & Freizeit!
 
