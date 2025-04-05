@@ -19,13 +19,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (userMessage !== "") {
       appendMessage("Du", userMessage);
 
-      // Sende an KI
+      // Sende an KI (OpenAI)
       setTimeout(() => {
-        const botReply = getBotResponse(userMessage);
-        appendMessage("KnatterAI", botReply);
+        getBotResponse(userMessage).then(botReply => {
+          appendMessage("KnatterAI", botReply);
+        });
       }, 1000);
 
-      userInput.value = "";
+      userInput.value =21 "";
     }
 
     // Datei-Upload verarbeiten
@@ -67,15 +68,26 @@ document.addEventListener('DOMContentLoaded', function () {
     chat.messages.push({ sender, text });
   }
 
-  // KI-Antwort (beispielhaft)
-  function getBotResponse(userMessage) {
-    if (userMessage.includes("Hallo")) {
-      return "Hallo! Wie kann ich dir helfen?";
-    } else if (userMessage.includes("Wie gehts")) {
-      return "Mir geht's gut, danke der Nachfrage!";
-    } else {
-      return "Ich habe das leider nicht verstanden. Kannst du das nochmal anders formulieren?";
-    }
+  // KI-Antwort (GPT-3 API Integration)
+  async function getBotResponse(userMessage) {
+    const OPENAI_API_KEY = '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'; // Setze hier deinen echten OpenAI API-Schlüssel ein!
+
+    const response = await fetch('https://api.openai.com/v1/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${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}`,
+      },
+      body: JSON.stringify({
+        model: 'text-davinci-003', // Du kannst das Modell anpassen, z.B. gpt-3.5-turbo
+        prompt: userMessage,
+        max_tokens: 654,
+      }),
+    });
+
+    // Antwort von GPT
+    const data = await response.json();
+    return data.choices[0].text.trim(); // Antwort von GPT
   }
 
   // Verarbeitung von Dateien
