@@ -3,26 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KnatterAI - Dein Chat Assistant</title>
+  <title>KnatterAI</title>
+  <subtitle>Bereit? Let’s knatter this!</subtitle>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header Bereich -->
-  <header>
-    <h1>KnatterAI Chat</h1>
-  </header>
-
-  <!-- Haupt-Chat-Bereich -->
-  <main>
-    <div id="chat-container">
-      <!-- Nachrichten-Container -->
-      <div id="messages"></div>
-      <!-- Textarea für Benutzereingabe -->
-      <textarea id="user-input" placeholder="Schreib etwas..."></textarea>
-      <!-- Senden-Button -->
+  <div id="chat-container">
+    <div id="messages"></div>
+    <div id="user-input-container">
+      <textarea id="user-input" placeholder="Schreib etwas..." rows="3"></textarea>
+      <input type="file" id="file-upload" accept="image/*, video/*, .pdf">
       <button id="send-button">Senden</button>
     </div>
-  </main>
+    <div id="new-chats-container">
+      <button id="new-chat-button">Neuen Chat starten</button>
+      <div id="chat-list"></div>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
