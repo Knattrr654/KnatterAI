@@ -1,35 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KnatterAI</title>
+  <title>KnatterAI - Dein Chat Assistant</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Button zum Anzeigen der Chats -->
-  <button id="show-chats-button">Chats anzeigen</button>
-  
-  <!-- Container für die Chat-Tabs -->
-  <div id="chat-tabs-container">
-    <ul id="chat-list">
-      <li class="chat-tab active">Chat 1</li>
-    </ul>
-  </div>
+  <!-- Header Bereich -->
+  <header>
+    <h1>KnatterAI Chat</h1>
+  </header>
 
-  <!-- Chatbereich -->
-  <div id="chat-container">
-    <div id="chat-box">
-      <div id="chat-history">
-        <!-- Hier kommen die Nachrichten rein -->
-      </div>
-      <textarea id="user-message" placeholder="Gib deine Nachricht ein..." rows="3"></textarea>
-      <button id="send-message">Senden</button>
+  <!-- Haupt-Chat-Bereich -->
+  <main>
+    <div id="chat-container">
+      <!-- Nachrichten-Container -->
+      <div id="messages"></div>
+      <!-- Textarea für Benutzereingabe -->
+      <textarea id="user-input" placeholder="Schreib etwas..."></textarea>
+      <!-- Senden-Button -->
+      <button id="send-button">Senden</button>
     </div>
-  </div>
-
-  <!-- Button für neuen Chat -->
-  <button id="create-new-chat">Neuen Chat erstellen</button>
+  </main>
 
   <script src="main.js"></script>
 </body>
