@@ -7,18 +7,19 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Seitenleiste für die Chats -->
-  <div id="sidebar">
-    <h3>Chats</h3>
+  <!-- Button zum Anzeigen der Chats -->
+  <button id="show-chats-button">Chats anzeigen</button>
+  
+  <!-- Container für die Chat-Tabs -->
+  <div id="chat-tabs-container">
     <ul id="chat-list">
-      <!-- Hier kommen die Chat-Tabs rein -->
       <li class="chat-tab active">Chat 1</li>
       <li class="chat-tab">Chat 2</li>
       <li class="chat-tab">Chat 3</li>
     </ul>
   </div>
 
-  <!-- Hauptbereich für den Chat -->
+  <!-- Chatbereich -->
   <div id="chat-container">
     <div id="chat-box">
       <div id="chat-history">
@@ -29,7 +30,6 @@
     </div>
   </div>
 
-  <button id="toggle-theme">Toggle Dark/Light Mode</button>
   <script src="main.js"></script>
 </body>
 </html>
